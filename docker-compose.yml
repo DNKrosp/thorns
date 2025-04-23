@@ -1,0 +1,23 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: .docker/nginx/Dockerfile
+    ports:
+      - "80:80"
+    depends_on:
+      - api
+  api:
+    build:
+      context: .
+      dockerfile: .docker/golang/Dockerfile
+    ports:
+      - "8080:8080"
+#    frontend:
+#    build:
+#      context: ./frontend
+#      dockerfile: .docker/golang/Dockerfile
+#    ports:
+#      - "3000:3000"
+#    depends_on:
+#      - health
