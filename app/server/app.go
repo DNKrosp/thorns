@@ -7,8 +7,8 @@ import (
 	"net/http"
 	"os"
 	"os/signal"
+	"thorns/config"
 	"thorns/health"
-	healthHTTP "thorns/health/http"
 	"thorns/health/usecase"
 	"time"
 )
@@ -32,7 +32,7 @@ func (a *App) Run(port string) error {
 		gin.Logger(),
 	)
 
-	healthHTTP.RegisterHTTPEndpoints(router, a.HealthUC)
+	config.RegisterHTTPEndpoints(router, a.HealthUC)
 
 	a.httpServer = &http.Server{
 		Addr:           ":" + port,

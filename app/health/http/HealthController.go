@@ -16,6 +16,14 @@ func NewHandler(useCase health.UseCase) *Handler {
 	}
 }
 
+// HealthAction @Summary Метод статуса работы сервиса
+// @Tags health
+// @Description Проверка работы сервиса и его компонент
+// @ID health
+// @Accept json
+// @Produce json
+// @Success 200 {integer} integer 1
+// @Router /health [get]
 func (h Handler) HealthAction(context *gin.Context) {
 	context.JSON(
 		http.StatusOK,

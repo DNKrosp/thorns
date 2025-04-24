@@ -8,6 +8,17 @@ import (
 	"thorns/server"
 )
 
+// @title Demo api
+// @version 1.0
+// @description Демонстрационное приложение
+
+// @host 127.0.0.1:80
+// @BasePath /
+
+// @securityDefinitions.apikey ApiKeyAuth
+// @in header
+// @name Authorization
+
 func main() {
 	logrus.SetFormatter(new(logrus.JSONFormatter))
 	if err := config.Init(); err != nil {
