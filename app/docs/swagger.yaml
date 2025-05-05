@@ -1,0 +1,29 @@
+basePath: /
+host: 127.0.0.1:81
+info:
+  contact: {}
+  description: Демонстрационное приложение
+  title: Demo api
+  version: "1.0"
+paths:
+  /health:
+    get:
+      consumes:
+      - application/json
+      description: Проверка работы сервиса и его компонент
+      operationId: health
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: integer
+      tags:
+      - health
+securityDefinitions:
+  ApiKeyAuth:
+    in: header
+    name: Authorization
+    type: apiKey
+swagger: "2.0"

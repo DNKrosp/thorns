@@ -12,7 +12,7 @@ import (
 // @version 1.0
 // @description Демонстрационное приложение
 
-// @host 127.0.0.1:80
+// @host 127.0.0.1:81
 // @BasePath /
 
 // @securityDefinitions.apikey ApiKeyAuth
@@ -27,7 +27,7 @@ func main() {
 
 	app := server.NewApp()
 
-	if err := app.Run(viper.GetString("port")); err != nil {
+	if err := app.Run(viper.GetString("port"), viper.GetString("external_url")); err != nil {
 		log.Fatalf("%s", err.Error())
 	}
 }

@@ -1,0 +1,43 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "Демонстрационное приложение",
+        "title": "Demo api",
+        "contact": {},
+        "version": "1.0"
+    },
+    "host": "127.0.0.1:81",
+    "basePath": "/",
+    "paths": {
+        "/health": {
+            "get": {
+                "description": "Проверка работы сервиса и его компонент",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "health"
+                ],
+                "operationId": "health",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "securityDefinitions": {
+        "ApiKeyAuth": {
+            "type": "apiKey",
+            "name": "Authorization",
+            "in": "header"
+        }
+    }
+}
